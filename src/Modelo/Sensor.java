@@ -5,6 +5,8 @@ import java.util.*;
  * 
  */
 public abstract class Sensor {
+    
+    private ItemMedicion itemMedicion;
 
     /**
      * Default constructor
@@ -12,7 +14,18 @@ public abstract class Sensor {
     public Sensor() {
     }
 
+    public Sensor(ItemMedicion itemMedicion) {
+        this.itemMedicion = itemMedicion;
+    }
 
+    public ItemMedicion getItemMedicion() {
+        return itemMedicion;
+    }
+
+    public void setItemMedicion(ItemMedicion itemMedicion) {
+        this.itemMedicion = itemMedicion;
+    }
+    
     /**
      * 
      */

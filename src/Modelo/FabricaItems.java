@@ -7,6 +7,7 @@ import java.util.*;
 public abstract class FabricaItems {
 
     
+    
     /**
      * Default constructor
      */
@@ -15,7 +16,8 @@ public abstract class FabricaItems {
 
     /**
      * 
+     * @return 
      */
-    public abstract void crearItemMedicion();
+    public abstract ItemMedicion crearItemMedicion();
 
 }
