@@ -21,7 +21,10 @@ public abstract class ItemMedicion {
      * 
      */
     public void procesoMedicion() {
-        // TODO implement here
+        this.hacerLeerSensor();
+        this.hacerAlmacenarResultado();
+        this.hacerCompararValores();
+        this.hacerEjecutarAcciones();
     }
 
     /**
