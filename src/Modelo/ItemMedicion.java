@@ -6,7 +6,8 @@ import java.util.*;
  */
 public abstract class ItemMedicion {
     
-    
+    private Sensor sensor;
+    private Actuador actuador;
 
     /**
      * Default constructor
@@ -14,6 +15,12 @@ public abstract class ItemMedicion {
     public ItemMedicion() {
     }
 
+    public ItemMedicion(Sensor sensor, Actuador actuador) {
+        this.sensor = sensor;
+        this.actuador = actuador;
+    }
+    
+    
 
 
 
@@ -47,18 +54,17 @@ public abstract class ItemMedicion {
      */
     protected abstract void hacerEjecutarAcciones();
 
-    /**
-     * 
-     */
-    public void setSensor() {
-        // TODO implement here
+    public void setSensor(Sensor sensor) {
+        this.sensor = sensor;
+    }
+
+    public void setActuador(Actuador actuador) {
+        this.actuador = actuador;
     }
 
     /**
      * 
      */
-    public void setActuador() {
-        // TODO implement here
-    }
+    
 
 }
