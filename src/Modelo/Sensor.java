@@ -7,15 +7,18 @@ import java.util.*;
 public abstract class Sensor {
     
     private ItemMedicion itemMedicion;
+    private ArrayList<LecturaSensor> LecturaSensores;
 
     /**
      * Default constructor
      */
     public Sensor() {
+        this.LecturaSensores = new ArrayList<LecturaSensor>();
     }
 
-    public Sensor(ItemMedicion itemMedicion) {
+    public Sensor(ItemMedicion itemMedicion, ArrayList<LecturaSensor> LecturaSensores) {
         this.itemMedicion = itemMedicion;
+        this.LecturaSensores = LecturaSensores;
     }
 
     public ItemMedicion getItemMedicion() {
@@ -43,4 +46,13 @@ public abstract class Sensor {
         // TODO implement here
     }
 
+    public ArrayList<LecturaSensor> getLecturaSensores() {
+        return LecturaSensores;
+    }
+
+    public void setLecturaSensores(ArrayList<LecturaSensor> LecturaSensores) {
+        this.LecturaSensores = LecturaSensores;
+    }
+
+    
 }
