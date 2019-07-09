@@ -6,19 +6,31 @@ import java.util.ArrayList;
  *
  * @author danielmej
  */
-public class Disparador extends Sensor{
-    
+public class Disparador extends Sensor {
+
+    // <editor-fold defaultstate="collapsed" desc="Atributos">
     private FabricaItems fabricaItems;
-    
+
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Constructores">
+    /**
+     * Default constructor
+     */
     public Disparador() {
     }
 
+    /**
+     * Custom constructor
+     * @param fabricaItems
+     * @param itemMedicion
+     * @param 
+     */
     public Disparador(FabricaItems fabricaItems, ItemMedicion itemMedicion, ArrayList<LecturaSensor> LecturaSensores) {
         super(itemMedicion, LecturaSensores);
         this.fabricaItems = fabricaItems;
     }
+    // </editor-fold>
 
-    
     public FabricaItems getFabricaItems() {
         return fabricaItems;
     }
@@ -27,8 +39,6 @@ public class Disparador extends Sensor{
         this.fabricaItems = fabricaItems;
     }
 
-    
-    
     @Override
     public void lectura() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -38,5 +48,5 @@ public class Disparador extends Sensor{
     public void actualizar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

@@ -1,31 +1,41 @@
 package Modelo;
-import java.util.*;
 
 /**
- * 
+ *
  */
 public abstract class ItemMedicion {
-    
+
+    // <editor-fold defaultstate="collapsed" desc="Atributos">
     private Sensor sensor;
     private Actuador actuador;
 
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Constructores">
     /**
      * Default constructor
      */
     public ItemMedicion() {
     }
 
+    /**
+     * Custom constructor
+     *
+     * @param sensor clase Sensor
+     * @param actuador clase Actuador
+     */
     public ItemMedicion(Sensor sensor, Actuador actuador) {
         this.sensor = sensor;
         this.actuador = actuador;
     }
-    
-    
 
-
-
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Metodos">
     /**
-     * 
+     * Metodo procesoMedicion
+     *
+     * Ejecuta: hacerLeerSensor hacerAlmacenarResultado hacerCompararValores
+     * hacerEjecutarAcciones
+     *
      */
     public void procesoMedicion() {
         this.hacerLeerSensor();
@@ -35,36 +45,43 @@ public abstract class ItemMedicion {
     }
 
     /**
-     * 
+     * Metodo abstracto
      */
     protected abstract void hacerLeerSensor();
 
     /**
-     * 
+     * Metodo abstracto
      */
     protected abstract void hacerAlmacenarResultado();
 
     /**
-     * 
+     * Metodo abstracto
      */
     protected abstract void hacerCompararValores();
 
     /**
-     * 
+     * Metodo abstracto
      */
     protected abstract void hacerEjecutarAcciones();
 
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Setters">
+    /**
+     * Asigna la instancia Sensor a ItemMedicion
+     *
+     * @param sensor clase Sensor
+     */
     public void setSensor(Sensor sensor) {
         this.sensor = sensor;
     }
 
+    /**
+     * Asigna la instancia Actuador a ItemMedicion
+     *
+     * @param actuador clase actuador
+     */
     public void setActuador(Actuador actuador) {
         this.actuador = actuador;
     }
-
-    /**
-     * 
-     */
-    
-
+    // </editor-fold>
 }
