@@ -20,8 +20,8 @@ public abstract class ItemMedicion {
     /**
      * Custom constructor
      *
-     * @param sensor clase Sensor
-     * @param actuador clase Actuador
+     * @param sensor instancia de Sensor
+     * @param actuador instancia de Actuador
      */
     public ItemMedicion(Sensor sensor, Actuador actuador) {
         this.sensor = sensor;
@@ -45,43 +45,44 @@ public abstract class ItemMedicion {
     }
 
     /**
-     * Metodo abstracto
+     * Metodo abstracto hacerLeerSensor
      */
     protected abstract void hacerLeerSensor();
 
     /**
-     * Metodo abstracto
+     * Metodo abstracto hacerAlmacenarResultado
      */
     protected abstract void hacerAlmacenarResultado();
 
     /**
-     * Metodo abstracto
+     * Metodo abstracto hacerCompararValores
      */
     protected abstract void hacerCompararValores();
 
     /**
-     * Metodo abstracto
+     * Metodo abstracto hacerEjecutarAcciones
      */
     protected abstract void hacerEjecutarAcciones();
 
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Setters">
     /**
-     * Asigna la instancia Sensor a ItemMedicion
+     * Asigna un Sensor
      *
-     * @param sensor clase Sensor
+     * @param sensor instancia de Sensor
      */
     public void setSensor(Sensor sensor) {
         this.sensor = sensor;
     }
 
     /**
-     * Asigna la instancia Actuador a ItemMedicion
+     * Asigna un Actuador
      *
-     * @param actuador clase actuador
+     * @param actuador instancia de Actuador
      */
     public void setActuador(Actuador actuador) {
         this.actuador = actuador;
     }
+
     // </editor-fold>
 }

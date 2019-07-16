@@ -6,8 +6,8 @@ import java.util.*;
  *
  */
 public abstract class Actuador {
-    // <editor-fold defaultstate="collapsed" desc="Atributos">
 
+    // <editor-fold defaultstate="collapsed" desc="Atributos">
     private ItemMedicion itemMedicion;
 
     // </editor-fold>
@@ -21,7 +21,7 @@ public abstract class Actuador {
     /**
      * Custom constructor
      *
-     * @param itemMedicion clase ItemMedicion
+     * @param itemMedicion instancia de ItemMedicion
      */
     public Actuador(ItemMedicion itemMedicion) {
         this.itemMedicion = itemMedicion;
@@ -30,9 +30,9 @@ public abstract class Actuador {
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Getters">
     /**
-     * Returna la clase ItemMedicion
+     * Returna un ItemMedicion
      *
-     * @return itemMedicion
+     * @return itemMedicion instancia de ItemMedicion
      */
     public ItemMedicion getItemMedicion() {
         return itemMedicion;
@@ -41,9 +41,9 @@ public abstract class Actuador {
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Setters">
     /**
-     * Asigna la instancia ItemMedicion a Actuador
-     * 
-     * @param itemMedicion clase ItemMedicion
+     * Asigna un ItemMedicion
+     *
+     * @param itemMedicion instancia de ItemMedicion
      */
     public void setItemMedicion(ItemMedicion itemMedicion) {
         this.itemMedicion = itemMedicion;
@@ -55,5 +55,6 @@ public abstract class Actuador {
      * Metodo abstracto actuar
      */
     public abstract void actuar();
+
     // </editor-fold>
 }
