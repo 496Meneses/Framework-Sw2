@@ -1,5 +1,6 @@
 package Modelo;
 
+import appmedicioncerveza.framework.LecturaSensor;
 import java.util.ArrayList;
 
 /**

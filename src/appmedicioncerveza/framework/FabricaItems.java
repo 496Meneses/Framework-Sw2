@@ -1,25 +1,22 @@
-package Modelo;
+package appmedicioncerveza.framework;
 
 import java.util.*;
 
 /**
  *
  */
-public abstract class LecturaSensor {
+public abstract class FabricaItems {
 
     // <editor-fold defaultstate="collapsed" desc="Constructores">
-    /**
-     * Default constructor
-     */
-    public LecturaSensor() {
+    public FabricaItems() {
     }
 
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Metodos">
     /**
-     * Metodo abstracto leer
+     *
+     * @return ItemMedicion
      */
-    public abstract void leer();
+    public abstract ItemMedicion crearItemMedicion();
 
-    // </editor-fold>
 }
