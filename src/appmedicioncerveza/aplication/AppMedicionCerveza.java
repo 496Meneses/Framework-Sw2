@@ -9,6 +9,7 @@ import appmedicioncerveza.framework.AbstractApp;
 import appmedicioncerveza.framework.Disparador;
 import appmedicioncerveza.framework.LecturaPorEvento;
 
+
 public class AppMedicionCerveza extends AbstractApp
 {
    
