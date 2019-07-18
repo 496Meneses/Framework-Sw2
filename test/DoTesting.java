@@ -31,7 +31,6 @@ public class DoTesting {
     public void testCreacionFabrica(){
   
         d.setFabricaItems(fConcreteItem1);
-        
         assertEquals(fConcreteItem1,d.getFabricaItems());
         
     }
@@ -41,15 +40,4 @@ public class DoTesting {
         fConcreteItem1.crearItemMedicion();
         assertEquals(concreteItem.getClass().getSimpleName(),fConcreteItem1.crearItemMedicion().getClass().getSimpleName());
     }
-    /**
-     * Metodo que prueba el proceso de medicion esperando un resultado ideal
-     *
-     * 
-     */
-    //@Test
-    //public void testMedicion(){
-      //  concreteItem.procesoMedicion();
-       // int enteroMedicion = 10; // Valor Ideal
-        //assertEquals(enteroMedicion,concreteItem.geTResultado());  //Resultado esperado luego de almacenar la medicion  
-    //}
 }
