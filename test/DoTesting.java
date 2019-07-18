@@ -6,7 +6,12 @@
 
 import appmedicioncerveza.aplication.FabricaCalidadCerveza;
 import appmedicioncerveza.aplication.MedicionPesoCerveza;
+import appmedicioncerveza.aplication.SensorPesoCerveza;
 import appmedicioncerveza.framework.Disparador;
+import appmedicioncerveza.framework.ItemMedicion;
+import appmedicioncerveza.framework.LecturaSensor;
+import appmedicioncerveza.framework.LecturaSimple;
+import javax.swing.JTextField;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -25,19 +30,47 @@ public class DoTesting {
     }
 
     FabricaCalidadCerveza fConcreteItem1 = new FabricaCalidadCerveza();
-    MedicionPesoCerveza concreteItem = new MedicionPesoCerveza();
-    Disparador d = new Disparador();
+    ItemMedicion concreteItem = new MedicionPesoCerveza();
+    LecturaSimple lector = new LecturaSimple(new SensorPesoCerveza());
+    
+    Disparador d = new Disparador(lector,fConcreteItem1);
     @Test
-    public void testCreacionFabrica(){
+    public void creacionFabricaTest(){
   
-        d.setFabricaItems(fConcreteItem1);
         assertEquals(fConcreteItem1,d.getFabricaItems());
         
     }
     @Test
-    public void testCreacionItem(){
+    public void creacionItemTest(){
+
+        assertEquals(concreteItem.getClass().getSimpleName(),fConcreteItem1.crearItemMedicion().getClass().getSimpleName());
+    }
+    // Test Intencional
+    @Test
+    public void notCreacionFabricaTest(){
+  
+        d.setFabricaItems(fConcreteItem1);
+        assertNotEquals(null,d.getFabricaItems());
+        
+    }
+    @Test
+    public void notCreacionItemTest(){
 
         fConcreteItem1.crearItemMedicion();
-        assertEquals(concreteItem.getClass().getSimpleName(),fConcreteItem1.crearItemMedicion().getClass().getSimpleName());
+        assertNotEquals(null,fConcreteItem1.crearItemMedicion().getClass().getSimpleName());
+    }
+    @Test
+    public void ObtenerMedidaTest(){
+       double numero = 10.0; 
+       JTextField atrCampo = new JTextField("10");
+       SensorPesoCerveza sensorPesoCerveza = new SensorPesoCerveza(lector,atrCampo);
+       assertEquals(numero,sensorPesoCerveza.obtenerMedida(),0.001);
+    }
+    @Test
+    public void notObtenerMedidaTest(){
+       double numero = 11;
+       JTextField atrCampo = new JTextField("10");
+       SensorPesoCerveza sensorPesoCerveza = new SensorPesoCerveza(lector,atrCampo);
+       assertNotEquals(numero,sensorPesoCerveza.obtenerMedida(),0.001);
     }
 }
